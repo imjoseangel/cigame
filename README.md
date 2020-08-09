@@ -1,4 +1,4 @@
-# CI Game ![build status](https://github.com/imjoseangel/cigame/workflows/Test/badge.svg)
+# CI Game
 
 Generates a Table of Committers for a given Project.
 
