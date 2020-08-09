@@ -1,0 +1,115 @@
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+    <title>CI LEAGUE</title>
+    <style>
+        * {
+            font-family: 'VT323', monospace;
+            margin: 0;
+            border: 0;
+            padding: 0;
+            color: white;
+        }
+
+        html {
+            background-color: #000000;
+        }
+
+        table {
+            margin: 10px auto;
+            border-collapse: collapse;
+        }
+
+        body {
+            margin: 0px 0% 30px 0%;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        td img {
+            width: 90px;
+            height: 90px;
+        }
+
+        th {
+            background-color: black;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        caption {
+            text-align: center;
+            text-decoration: none;
+            color: #ffe221;
+            font-size: 2.8rem;
+            text-transform: capitalize;
+            padding-bottom: 0.1em;
+        }
+
+        td {
+            color: #77ff21;
+            text-align: center;
+            font-size: 4rem;
+        }
+
+        tr {
+            border-bottom: 1px solid white;
+        }
+
+        tr:first-child {
+            border-top: 1px solid white;
+        }
+
+        table td:nth-child(4) {
+            color: red;
+        }
+
+        table td:nth-child(3) {
+            color: #ffe221;
+        }
+
+        tfoot {
+            background: deeppink;
+        }
+
+        tfoot td {
+            color: white !important; /* sue me */
+        }
+    </style>
+</head>
+<body>
+<table>
+    <caption>CI HIGH-SCORES</caption>
+    <thead>
+    <tr>
+        <th colspan="2">Dev</th>
+        <th>Integrations to master</th>
+        <th>Failures</th>
+        <th>Score</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{range .DevStats}}
+        <tr>
+            <td><img alt="{{.Dev.Name}}" src="{{.Dev.Avatar}}"/></td>
+            <td>{{.Dev.Name}}</td>
+            <td>{{.GitStat.Commits}}</td>
+            <td>{{.GitStat.Failures}}</td>
+            <td>{{.GitStat.Score}}</td>
+        </tr>
+    {{end}}
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="2">Team</td>
+        <td>{{.TotalCommits}}</td>
+        <td>{{.TotalFails}}</td>
+        <td>{{.TotalScore}}</td>
+    </tr>
+    </tfoot>
+</table>
+</body>
+</html>
