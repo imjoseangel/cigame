@@ -8,7 +8,7 @@ Generates a Table of Committers for a given Project.
 
 ## Run
 
-`$ go run cmd/cigame.go`
+`$ go run cmd/*.go`
 
 or
 
