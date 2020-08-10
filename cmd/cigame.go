@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/imjoseangel/cigame/github"
-	"github.com/imjoseangel/cigame/league"
 	"html/template"
 	"log"
 	"net/http"
 	"os"
+
+	"github.com/imjoseangel/cigame/github"
+	"github.com/imjoseangel/cigame/league"
 )
 
 const defaultPort = ":8000"
@@ -27,7 +28,7 @@ func main() {
 	port := getPort()
 
 	fmt.Println("Listening on port", port)
-	fmt.Printf("Try http://localhost%s/integrations?owner=quii&repo=cigame\n", port)
+	fmt.Printf("Try http://localhost%s/integrations?owner=imjoseangel&repo=cigame\n", port)
 	if err := http.ListenAndServe(port, server); err != nil {
 		log.Fatalf("Couldn't launch server listening on %s, %s", port, err)
 	}

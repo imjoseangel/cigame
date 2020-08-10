@@ -23,9 +23,7 @@ func NewFileSystemAliasService(path string) (FileSystemAliasService, error) {
 	}
 
 	decoder := json.NewDecoder(file)
-
 	service := make(map[string]string)
-
 	err = decoder.Decode(&service)
 
 	if err != nil {
@@ -36,7 +34,6 @@ func NewFileSystemAliasService(path string) (FileSystemAliasService, error) {
 }
 
 type NoOpAliasService struct {
-
 }
 
 func (n NoOpAliasService) GetAlias(email string) string {
